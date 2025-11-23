@@ -87,6 +87,9 @@ class data_handler:
 
 def main():
     data_handler_instance = data_handler()
+    data_handler_instance.initialize_N()
+    data_handler_instance.initialize_k()
+    data_handler_instance.initialize_data_points()
     knn_regressor = KNNRegressor(data_handler_instance)
 
     x_input = data_handler_instance.get_X()

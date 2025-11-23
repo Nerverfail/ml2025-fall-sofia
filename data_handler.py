@@ -6,9 +6,25 @@ class data_handler:
         self.N = None
         self.k = None
         self.data = None
-        self.initialize_N()
-        self.initialize_k()
-        self.initialize_data_points()
+
+    def initialize_data_points_module_8(self):
+        N = self.N
+        self.y_true = np.zeros(N, dtype=int)
+        self.y_pred = np.zeros(N, dtype=int)
+        print("Please enter N data points (x, y):")
+        for i in range(N):
+            while True:
+                try:
+                    x = int(input(f"Enter x value for point {i+1} (0 or 1): "))
+                    y = int(input(f"Enter y value for point {i+1} (0 or 1): "))
+                    if x in [0, 1] and y in [0, 1]:
+                        self.y_true[i] = x
+                        self.y_pred[i] = y
+                        break
+                    else:
+                        print("Invalid input. Please enter 0 or 1 for both x and y.")
+                except ValueError:
+                    print("Invalid input. Please enter integers 0 or 1.")
     
     def initialize_N(self):
         while True:
